@@ -1,0 +1,94 @@
+/* Brand Colors & Global Settings */
+:root {
+    --navy-blue: #0F2A4A;
+    --gold: #C29B4C;
+    --light-bg: #F8F7F2;
+    --text-dark: #333333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--navy-blue);
+    color: var(--gold);
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0 0 15px 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+header nav a:hover {
+    color: var(--gold);
+}
+
+/* Main Sections Layout */
+section {
+    background-color: white;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--gold);
+}
+
+h3 {
+    color: var(--navy-blue);
+    margin-top: 0;
+}
+
+hr {
+    display: none; /* We hide the old ugly lines because our sections look like cards now */
+}
+
+/* Search Bar & Button */
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    background-color: var(--navy-blue);
+    color: white;
+    border: none;
+    padding: 10.5px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--gold);
+    color: var(--navy-blue);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--navy-blue);
+    color: white;
+    margin-top: 40px;
+}
