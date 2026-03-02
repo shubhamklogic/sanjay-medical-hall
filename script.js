@@ -12,7 +12,8 @@ const medicineCatalog = [
     "omeprazole",
     "azithromycin",
     "dolo 650",
-    "calpol"
+    "calpol",
+    "ibuprofen"
 ];
 
 // 3. We tell the button what to do when someone clicks it.
