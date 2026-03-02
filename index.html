@@ -3,51 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay Medical Hall</title>
+    <title>Sanjay Medical Hall | Healthcare</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h2>Sanjay Medical Hall</h2>
+        <div class="header-content">
+            <img src="logo.jpeg" alt="Sanjay Medical Hall Logo" class="brand-logo">
+            <div class="brand-text">
+                <h2>Sanjay Medical Hall</h2>
+                <p>HEALTHCARE</p>
+            </div>
+        </div>
         <nav>
-            <a href="#medicines">Medicines</a> | 
-            <a href="#doctors">Doctors</a> | 
+            <a href="#medicines">Medicines</a>
+            <a href="#doctors">Doctors</a>
             <a href="#facilities">Facilities</a>
         </nav>
     </header>
 
-    <hr>
-
-    <section id="medicines">
-        <h3>Medicine Directory</h3>
-        <p>Check if a medicine is available in our standard catalog:</p>
-        <input type="text" placeholder="Type medicine name...">
-        <button>Search</button>
+    <section id="medicines" class="premium-card">
+        <h3>🔍 Medicine Directory</h3>
+        <p>Check our standard catalog for availability:</p>
+        <div class="search-container">
+            <input type="text" placeholder="Type medicine name...">
+            <button id="search-btn">Search</button>
+        </div>
         <p id="search-result"></p>
     </section>
 
-    <hr>
-
-    <section id="doctors">
-        <h3>Our Doctors</h3>
-        <p>Meet our experienced medical staff.</p>
-        </section>
-
-    <hr>
-
-    <section id="facilities">
-        <h3>Hospital Facilities</h3>
-        <ul>
-            <li>🩸 <b>Pathology:</b> Comprehensive blood testing.</li>
-            <li>🖥️ <b>Ultrasound:</b> Advanced imaging services.</li>
-        </ul>
+    <section id="doctors" class="premium-card">
+        <h3>👨‍⚕️ Our Specialists</h3>
+        <p class="section-subtitle">Dedicated professionals committed to your health.</p>
+        
+        <div class="doctor-grid">
+            <div class="doc-card">
+                <img src="doctor1.jpg" alt="Dr. A. Kumar" class="doc-photo">
+                <div class="doc-info">
+                    <h4>Dr. A. Kumar</h4>
+                    <p class="qualification">MBBS, MD</p>
+                    <a href="tel:+919876543210" class="call-btn">📞 Call for Appointment</a>
+                </div>
+            </div>
+            
+            <div class="doc-card">
+                <div class="doc-photo-placeholder">👤</div>
+                <div class="doc-info">
+                    <h4>Dr. S. Singh</h4>
+                    <p class="qualification">MBBS, MS</p>
+                    <a href="tel:+919876543210" class="call-btn">📞 Call for Appointment</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <hr>
+    <section id="facilities" class="premium-card">
+        <h3>🏥 Hospital Facilities</h3>
+        <div class="facilities-grid">
+            <div class="facility-item">
+                <span class="icon">🩸</span>
+                <div>
+                    <strong>Pathology</strong>
+                    <p>Comprehensive and accurate blood testing services.</p>
+                </div>
+            </div>
+            <div class="facility-item">
+                <span class="icon">🖥️</span>
+                <div>
+                    <strong>Ultrasound</strong>
+                    <p>Advanced imaging diagnostics with precise reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>📍 Location: Hospital Chowk, Gopalganj</p>
+        <div class="footer-details">
+            <p><strong>📍 Location:</strong> Hospital Chowk, Gopalganj</p>
+            <a href="https://share.google/golG0Zi7p4LcUKYVn" target="_blank" class="map-btn">🗺️ Open in Google Maps</a>
+        </div>
+        <p class="copyright">© 2026 Sanjay Medical Hall. All Rights Reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
