@@ -1,3 +1,7 @@
+/* Global Mobile Fix */
+* {
+    box-sizing: border-box;
+}
 /* Premium Color Palette (Matched to Visiting Card) */
 :root {
     --navy-blue: #0F2A4A;
@@ -281,4 +285,57 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 15px;
     margin-top: 20px;
+}
+/* ========================================= */
+/* 📱 MOBILE RESPONSIVENESS FIXES            */
+/* ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the Header Neatly */
+    .header-content {
+        flex-direction: column; /* Stacks logo on top of text */
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .brand-logo {
+        width: 80px; /* Slightly smaller logo for phones */
+    }
+    
+    .brand-text {
+        border-left: none; /* Removes the vertical line */
+        border-top: 2px solid var(--gold); /* Puts the line on top instead */
+        padding-left: 0;
+        padding-top: 10px;
+        text-align: center;
+    }
+    
+    .brand-text h2 {
+        font-size: 1.8em; /* Smaller text to fit the screen */
+    }
+
+    /* 2. Squeeze the Navigation Menu */
+    header nav a {
+        margin: 0 10px; /* Less gap between links */
+        font-size: 1em;
+    }
+
+    /* 3. Adjust the Premium Cards */
+    .premium-card {
+        margin: 20px 15px; /* Adds space outside the card so it doesn't touch the phone edge */
+        padding: 25px 20px; /* Reduces inside padding so text has more room */
+    }
+
+    h3 {
+        font-size: 1.5em; /* Smaller headings */
+    }
+
+    /* 4. Stack the Search Bar */
+    .search-container {
+        flex-direction: column; /* Puts the search button under the text box */
+    }
+
+    button {
+        width: 100%; /* Makes the search button span full width */
+    }
 }
