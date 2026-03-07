@@ -339,32 +339,3 @@ footer {
         width: 100%; /* Makes the search button span full width */
     }
 }
-
-.coming-soon{
-    text-align:center;
-    padding:35px;
-    background:#F8F7F2;
-    border-radius:12px;
-    margin-top:20px;
-}
-
-.coming-soon h4{
-    color:#C29B4C;
-    font-size:24px;
-    margin-bottom:12px;
-}
-
-.coming-soon p{
-    color:#0F2A4A;
-    font-size:16px;
-}
-
-.call-link{
-    color:#0F2A4A;
-    font-weight:600;
-    text-decoration:none;
-}
-
-.call-link:hover{
-    color:#C29B4C;
-}

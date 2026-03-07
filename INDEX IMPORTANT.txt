@@ -24,17 +24,13 @@
     </header>
 
     <section id="medicines" class="premium-card">
-    <h3>🔎 Medicine Directory</h3>
-    <p>Check our standard catalog for availability:</p>
-
-    <div class="coming-soon">
-        <h4>🚧 Medicine Directory Coming Soon</h4>
-        <p>
-            Please visit our store or call us at 
-            <a href="tel:+919876543210" class="call-link">+91 98765 43210</a> 
-            for medicine availability.
-        </p>
-    </div>
+        <h3>🔍 Medicine Directory</h3>
+        <p>Check our standard catalog for availability:</p>
+        <div class="search-container">
+            <input type="text" placeholder="Type medicine name...">
+            <button id="search-btn">Search</button>
+        </div>
+        <p id="search-result"></p>
     </section>
 
     <section id="doctors" class="premium-card">
