@@ -69,3 +69,22 @@ WHERE status != 'CANCELLED';
 -- Indexes for rapid daily queue filtering and patient history lookups
 CREATE INDEX IF NOT EXISTS idx_appointments_doctor_date ON appointments(doctor_id, appointment_date);
 CREATE INDEX IF NOT EXISTS idx_appointments_patient ON appointments(patient_id);
+
+-- 5. MEDICAL RECORDS & PRESCRIPTIONS TABLE
+CREATE TABLE IF NOT EXISTS medical_records (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    patient_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    appointment_id UUID REFERENCES appointments(id) ON DELETE SET NULL,
+    uploaded_by_user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    uploaded_by_role VARCHAR(20) NOT NULL CHECK (uploaded_by_role IN ('PATIENT', 'DOCTOR', 'ADMIN')),
+    record_type VARCHAR(50) NOT NULL CHECK (record_type IN ('PRESCRIPTION', 'PATHOLOGY_REPORT', 'ULTRASOUND_SCAN', 'OTHER')),
+    title VARCHAR(150) NOT NULL,
+    file_url TEXT NOT NULL,
+    notes TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indexes for rapid lookup of a patient's historical medical file
+CREATE INDEX IF NOT EXISTS idx_medical_records_patient ON medical_records(patient_id);
+CREATE INDEX IF NOT EXISTS idx_medical_records_appointment ON medical_records(appointment_id);
+CREATE INDEX IF NOT EXISTS idx_medical_records_type ON medical_records(record_type);
