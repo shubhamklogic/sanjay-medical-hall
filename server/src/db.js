@@ -1,8 +1,11 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
+// Extract clean connection string without extra query flags
+const connectionString = (process.env.DATABASE_URL || '').split('&')[0];
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: connectionString,
   ssl: {
     rejectUnauthorized: false
   }
