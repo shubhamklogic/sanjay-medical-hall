@@ -5,6 +5,7 @@ const db = require('./db');
 const doctorRoutes = require('./routes/doctors');
 const appointmentRoutes = require('./routes/appointments');
 const recordRoutes = require('./routes/records');
+const scheduleRoutes = require('./routes/schedules');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/records', recordRoutes);
+app.use('/api/schedules', scheduleRoutes);
 
 // Health Check & Database Ping Route
 app.get('/api/health', async (req, res) => {
