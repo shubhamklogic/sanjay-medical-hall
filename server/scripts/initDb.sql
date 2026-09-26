@@ -88,3 +88,20 @@ CREATE TABLE IF NOT EXISTS medical_records (
 CREATE INDEX IF NOT EXISTS idx_medical_records_patient ON medical_records(patient_id);
 CREATE INDEX IF NOT EXISTS idx_medical_records_appointment ON medical_records(appointment_id);
 CREATE INDEX IF NOT EXISTS idx_medical_records_type ON medical_records(record_type);
+
+-- 6. PATIENT PROFILES TABLE (Demographics, Health Data, Emergency Contacts)
+CREATE TABLE IF NOT EXISTS patient_profiles (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id UUID UNIQUE NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    date_of_birth DATE,
+    gender VARCHAR(20) CHECK (gender IN ('MALE', 'FEMALE', 'OTHER')),
+    blood_group VARCHAR(10) CHECK (blood_group IN ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')),
+    address TEXT,
+    emergency_contact_name VARCHAR(120),
+    emergency_contact_phone VARCHAR(20),
+    allergies TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_patient_profiles_user ON patient_profiles(user_id);
